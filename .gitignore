@@ -1,0 +1,7 @@
+tmp
+.*.swp
+a.out
+__pycache__
+.vscode
+*.pyc
+tags
