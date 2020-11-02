@@ -12,6 +12,7 @@ class BaseModel():
     """
     our class BaseModel
     """
+    date = '%Y-%m-%dT%H:%M:%S.%f'
 
     def __init__(self, *args, **kwargs):
         """
