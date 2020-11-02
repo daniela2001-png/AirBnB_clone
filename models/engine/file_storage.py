@@ -7,6 +7,7 @@ JSON file to instances
 
 import models
 import json
+from datetime import datetime
 
 
 class FileStorage:
@@ -27,12 +28,13 @@ class FileStorage:
         """ add a dictionary """
         if obj is not None:
             key = obj.__class__.__name__ + '.' + obj.id
+            # aqui el updated y el create son datetimes
             self.__objects[key] = obj
 
     def save(self):
         """ Serializes to JSON file. """
         new_dict = {}
-        for key in self.__objects.keys():
+        for key in self.__objects.keys():  # aqui el created  updated datetime
             new_dict[key] = self.__objects[key].to_dict()
         with open(self.__file_path, 'w') as f:
             json.dump(new_dict, f)
