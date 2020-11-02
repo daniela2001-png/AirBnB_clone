@@ -52,7 +52,7 @@ class TestBaseModel(unittest.TestCase):
     def test_updated_at_noArgs_type(self):
         '''check type updated_at'''
         my_model = BaseModel()
-        self.assertEqual(type(my_model.updated_at), datetime)
+        self.assertEqual(type(my_model.updated_at), str)
 
     def test_updated_at_noArgs_value(self):
         '''check value of updated_at'''
