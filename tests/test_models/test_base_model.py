@@ -54,6 +54,15 @@ class TestBaseModel(unittest.TestCase):
         my_model = BaseModel()
         self.assertEqual(type(my_model.updated_at), datetime)
 
+    def test_updated_at_noArgs_format(self):
+        '''check format %Y-%M-%DT%H:%M:%S.%MS'''
+        datetime_format = re.compile(
+            "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d+$")
+        my_model = BaseModel()
+        my_updated_at = my_model.to_dict()['updated_at']
+        format_found = datetime_format.match(my_updated_at)
+        self.assertIsNotNone(format_found)
+
     def test_updated_at_noArgs_value(self):
         '''check value of updated_at'''
         now = datetime.now().replace(microsecond=0)
@@ -74,8 +83,8 @@ class TestBaseModel(unittest.TestCase):
         my_str = my_model.__str__()
         self.assertIsNotNone(r.match(my_str))
 
-    def test_to_dict_noAditonalArgsAttr(self):
-        '''check to_dict w/o additional args'''
+    def test_to_dict_noAditonalAttr(self):
+        '''check to_dict w/o additional Attributes'''
         my_model = BaseModel()
         BaseModel.name = "holberton"
         attributes = {}
@@ -83,8 +92,3 @@ class TestBaseModel(unittest.TestCase):
             if (key not in ('__class__', 'id', 'created_at', 'updated_at')):
                 attributes[key] = value
         self.assertFalse(attributes)
-
-    def test_to_dict_class(self):
-        '''check to_dict w/o additional args'''
-        my_model = BaseModel()
-        self.assertEqual(my_model.to_dict()['__class__'], 'BaseModel')
