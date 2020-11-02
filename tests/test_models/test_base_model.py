@@ -10,35 +10,41 @@ from time import sleep
 class TestBaseModel(unittest.TestCase):
     '''test BaseModel'''
 
-    def test_createAttr(self):
-        '''create Instance'''
+    def test_createAttr_noArgs(self):
+        '''create Instance w/o args'''
         my_model = BaseModel()
         my_model.name = "Holberton"
         self.assertEqual(my_model.name, "Holberton")
 
-    def test_id(self):
-        '''check id'''
+    def test_id_noArgs(self):
+        '''check id w/o args'''
         my_model = BaseModel()
         self.assertTrue(my_model.id)
         self.assertEqual(type(my_model.id), str)
 
-    def test_created_at(self):
-        '''check created_at'''
-        # TODO: created from json
-        now = datetime.now().replace(microsecond=0)
-        datetime_format = re.compile("\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}..*")
+    def test_created_at_noArgs_type(self):
+        '''check type of created_at w/o args'''
         my_model = BaseModel()
-        # test type(created_at)
         self.assertEqual(type(my_model.created_at), datetime)
-        # test datetieme_format
-        # fromat_found = (datetime_format.match(
-        # my_model.to_dict()['created_at']))
-        # self.assertIsNotNone(format_found)
+
+    def test_created_at_noArgs_afterSave(self):
+        '''check created_at w/o args after save'''
+        now = datetime.now().replace(microsecond=0)
+        my_model = BaseModel()
         # test value created_at
         self.assertEqual(my_model.created_at.replace(microsecond=0), now)
         # test value changed_no_update
         my_model.save()
         self.assertEqual(my_model.created_at.replace(microsecond=0), now)
+
+    def test_created_at_noArgs_format(self):
+        '''check format %Y-%M-%DT%H:%M:%S.%MS'''
+        datetime_format = re.compile(
+            "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d+$")
+        my_model = BaseModel()
+        my_created_at = my_model.to_dict()['created_at']
+        format_found = datetime_format.match(my_created_at)
+        self.assertIsNotNone(format_found)
 
     def test_updated_at(self):
         '''check updated_at'''
