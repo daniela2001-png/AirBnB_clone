@@ -47,6 +47,16 @@ class TestFileStorage(TestCase):
         # TODO check how to access a private value
         pass
 
+    def test_checkPublicInstanceTypes(self):
+        '''check public instance types'''
+        my_model = BaseModel()
+        self.assertEqual(type(storage.all()), dict)
+
+
+##################
+# Unuseless test #
+##################
+
     def test_checkformatID(self):
         '''check id format of storage'''
         my_model = BaseModel()
