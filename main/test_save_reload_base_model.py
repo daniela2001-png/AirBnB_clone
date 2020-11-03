@@ -17,7 +17,6 @@ def main():
 
     print("-- Create a new object --")
     my_model = BaseModel()
-    print(my_model)
     my_model.name = "Holberton"
     my_model.my_number = 89
     my_model.save()
