@@ -35,17 +35,14 @@ class HBNBCommand(Cmd):
         """ Is for help to thought the console"""
         print("To exit put the commands: quit or CTRL + D")
 
-    def do_create(self, input):
-        """
-        create objects
-        ex : create <class name>
-        create BaseModel
-        """
-        if len(input) > 1:
-            if input == "BaseModel":
-                new = BaseModel()
-                storage.save()
-                print(new.id)
+    def do_create(self, inp):
+        """ Creates a new instance of BaseModel, saves it and prints the id """
+        if len(inp.split()) == 1:
+            if inp in self.clases:
+                new_inst = 0
+                if inp == 'BaseModel':
+                    new_inst = BaseModel()
+                print(new_inst.id)
             else:
                 print("** class doesn't exist **")
         else:
@@ -68,7 +65,7 @@ class HBNBCommand(Cmd):
                 else:
                     print("** instance id missing **")
             else:
-                print("** class doesn't exist **")
+                print("** class doesn\'t exist **")
         else:
             print("** class name missing **")
 
@@ -85,6 +82,7 @@ class HBNBCommand(Cmd):
                     if key in storage.all():
                         a = storage.all()
                         del a[key]
+                        storage.save()
                     else:
                         print("** no instance found **")
                 else:
@@ -95,49 +93,44 @@ class HBNBCommand(Cmd):
             print("** class name missing **")
 
     def do_all(self, input):
-        """
-        Prints all string representation of all instances based
-        or not on the class name. Ex: $ all BaseModel or $ all.
-        """
-        if input in self.clases:
-            lista = [str(value) for key, value in storage.all().items()]
-            print(lista)
-        else:
-            print("** class doesn't exist **")
+        """Prints all string representation of all instances based or not
+        on the class name. Ex: $ all BaseModel or $ all"""
+        if len(input) == 0:
+            print([str(v) for v in storage.all().values()])
 
-    def do_update(self, input):
-        """
-        Updates an instance based on the class name and id by adding or
-        updating attribute (save the change into the JSON file).
-        Ex: $ update BaseModel 1234-1234-1234 email "aibnb@holbertonschool.com"
-        """
-        if len(input) != 0:
-            if input.split()[0] in self.clases:
-                if len(input.split()) >= 2:
-                    key = input.split()[0] + "." + input.split()[1]
-                    if key in storage.all():
-                        if len(input.split()) > 2:
-                            if len(input.split()) <= 3:
-                                print("** value missing **")
-                            else:
-                                a = storage.all()
-                                my_dict = a[key].__dict__
-                                lista = input.split()
-                                value_1 = lista[3][1:-1]
-                                key_1 = lista[2]
-                                my_dict[key_1] = value_1
-                                storage.save()
-                                # print(a[key])
-                        else:
-                            print("** attribute name missing **")
-                    else:
-                        print("** no instance found **")
-                else:
-                    print("** instance id missing **")
-            else:
-                print("** class doesn't exist **")
+        elif input not in self.clases:
+            print('** class doesn\'t exist **')
         else:
-            print("** class name missing **")
+            print([str(v) for k, v in storage.all().items() if input in k])
+
+    def do_update(self, args):
+        """ This will update the json file"""
+        args = args.split()
+
+        if len(args) != 0:
+            if args[0] in self.clases:
+                if len(args) == 1:
+                    print('** instance id missing **')
+                else:
+                    key = args[0] + '.' + args[1]
+                    if key in storage.all():
+                        if len(args) > 2:
+                            if len(args) <= 3:
+                                print('** value missing **')
+                            else:
+                                setattr(
+                                    storage.all()[key],
+                                    args[2],
+                                    args[3][1:-1])
+                                storage.all()[key].save()
+                        else:
+                            print('** attribute name missing **')
+                    else:
+                        print('** no instance found **')
+            else:
+                print('** class doesn\'t exist **')
+        else:
+            print('** class name missing **')
 
 
 if __name__ == '__main__':
