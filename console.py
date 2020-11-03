@@ -116,8 +116,10 @@ class HBNBCommand(Cmd):
                 if len(input.split()) >= 2:
                     key = input.split()[0] + "." + input.split()[1]
                     if key in storage.all():
-                        if len(input.split()) >= 3:
-                            if len(input.split()) >= 4:
+                        if len(input.split()) > 2:
+                            if len(input.split()) <= 3:
+                                print("** value missing **")
+                            else:
                                 a = storage.all()
                                 my_dict = a[key].__dict__
                                 lista = input.split()
@@ -126,8 +128,6 @@ class HBNBCommand(Cmd):
                                 my_dict[key_1] = value_1
                                 storage.save()
                                 print(a[key])
-                            else:
-                                print("** value missing **")
                         else:
                             print("** attribute name missing **")
                     else:
