@@ -127,7 +127,7 @@ class HBNBCommand(Cmd):
                                 key_1 = lista[2]
                                 my_dict[key_1] = value_1
                                 storage.save()
-                                print(a[key])
+                                # print(a[key])
                         else:
                             print("** attribute name missing **")
                     else:
