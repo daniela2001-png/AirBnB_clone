@@ -5,6 +5,7 @@ is the console to developer
 """
 from cmd import Cmd
 import sys
+from models.user import User
 from models.base_model import BaseModel
 import json
 from models import storage
@@ -16,7 +17,7 @@ class HBNBCommand(Cmd):
         prompt = '(hbnb) '
     else:
         prompt = '(hbnb)' + '\n'
-    clases = ("BaseModel")
+    clases = ("BaseModel", "User")
 
     def do_quit(self, input):
         """ Is the function it will exit the program """
@@ -42,6 +43,8 @@ class HBNBCommand(Cmd):
                 new_inst = 0
                 if inp == 'BaseModel':
                     new_inst = BaseModel()
+                elif inp == "User":
+                    new_inst = User()
                 print(new_inst.id)
             else:
                 print("** class doesn't exist **")
