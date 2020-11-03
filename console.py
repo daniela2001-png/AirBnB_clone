@@ -35,16 +35,13 @@ class HBNBCommand(Cmd):
         """ Is for help to thought the console"""
         print("To exit put the commands: quit or CTRL + D")
 
-    def do_create(self, input):
-        """
-        create objects
-        ex : create <class name>
-        create BaseModel
-        """
-        if len(input) > 1:
-            if input == "BaseModel":
-                new = BaseModel()
-                storage.save()
+    def do_create(self, inp):
+        """ Creates a new instance of BaseModel, saves it and prints the id """
+        if len(inp.split()) == 1:
+            if inp in self.clases:
+                new_inst = 0
+                if inp == 'BaseModel':
+                    new_inst = BaseModel()
                 print(new.id)
             else:
                 print("** class doesn't exist **")
@@ -95,15 +92,15 @@ class HBNBCommand(Cmd):
             print("** class name missing **")
 
     def do_all(self, input):
-        """
-        Prints all string representation of all instances based
-        or not on the class name. Ex: $ all BaseModel or $ all.
-        """
-        if input in self.clases:
-            lista = [str(value) for key, value in storage.all().items()]
-            print(lista)
+        """Prints all string representation of all instances based or not
+        on the class name. Ex: $ all BaseModel or $ all"""
+        if len(kika) == 0:
+            print([str(v) for v in storage.all().values()])
+
+        elif kika not in self.clases:
+            print('** class doesn\'t exist **')
         else:
-            print("** class doesn't exist **")
+            print([str(v) for k, v in storage.all().items() if kika in k])
 
     def do_update(self, input):
         """
