@@ -16,6 +16,7 @@ class HBNBCommand(Cmd):
         prompt = '(hbnb) '
     else:
         prompt = '(hbnb)' + '\n'
+    clases = ("BaseModel")
 
     def do_quit(self, input):
         """ Is the function it will exit the program """
@@ -43,6 +44,49 @@ class HBNBCommand(Cmd):
                 new = BaseModel()
                 storage.save()
                 print(new.id)
+            else:
+                print("** class doesn't exist **")
+        else:
+            print("** class name missing **")
+
+    def do_show(self, input):
+        """
+        show the string representation of a instance
+        form the class name and id
+        """
+        if len(input) != 0:
+            if input.split()[0] in self.clases:
+                if len(input.split()) >= 2:
+                    key = input.split()[0] + "." + input.split()[1]
+                    if key in storage.all():
+                        a = storage.all()
+                        print(a[key])
+                    else:
+                        print("** no instance found **")
+                else:
+                    print("** instance id missing **")
+            else:
+                print("** class doesn't exist **")
+        else:
+            print("** class name missing **")
+
+    def do_destroy(self, input):
+        """
+        Deletes an instance based on the class name and id
+        (save the change into the JSON file)
+        ex: destroy BaseModel 3645237654
+        """
+        if len(input) != 0:
+            if input.split()[0] in self.clases:
+                if len(input.split()) >= 2:
+                    key = input.split()[0] + "." + input.split()[1]
+                    if key in storage.all():
+                        a = storage.all()
+                        del a[key]
+                    else:
+                        print("** no instance found **")
+                else:
+                    print("** instance id missing **")
             else:
                 print("** class doesn't exist **")
         else:
