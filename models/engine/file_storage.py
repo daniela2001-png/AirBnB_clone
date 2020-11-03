@@ -51,6 +51,6 @@ class FileStorage:
                 for key, value in data.items():
                     if key.split('.')[0] == 'BaseModel':
                         new = BaseModel(**value)
-                self.__objects[key] = new
+                    self.__objects[key] = new
         except FileNotFoundError:
             pass
