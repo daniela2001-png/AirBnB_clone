@@ -94,13 +94,13 @@ class HBNBCommand(Cmd):
     def do_all(self, input):
         """Prints all string representation of all instances based or not
         on the class name. Ex: $ all BaseModel or $ all"""
-        if len(kika) == 0:
+        if len(input) == 0:
             print([str(v) for v in storage.all().values()])
 
-        elif kika not in self.clases:
+        elif input not in self.clases:
             print('** class doesn\'t exist **')
         else:
-            print([str(v) for k, v in storage.all().items() if kika in k])
+            print([str(v) for k, v in storage.all().items() if input in k])
 
     def do_update(self, input):
         """
