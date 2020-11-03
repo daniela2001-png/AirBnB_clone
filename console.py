@@ -42,7 +42,7 @@ class HBNBCommand(Cmd):
                 new_inst = 0
                 if inp == 'BaseModel':
                     new_inst = BaseModel()
-                print(new.id)
+                print(new_inst.id)
             else:
                 print("** class doesn't exist **")
         else:
