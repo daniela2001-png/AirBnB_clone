@@ -19,10 +19,6 @@ class TestFileStorage(TestCase):
         self.assertFalse(os.path.exists(self.json_file))
         storage.clear()
 
-    def test_helloworld(self):
-        '''simple assertTrue'''
-        self.assertTrue(True)
-
     def test_createJSON(self):
         '''Create a json file'''
         my_model = BaseModel()
@@ -46,3 +42,16 @@ class TestFileStorage(TestCase):
         for attr in all_objs.values():
             self.assertEqual(attr.name, "Holberton")
 
+    def test_typeJSONPATH(self):
+        '''check storage FilePATH type'''
+        # TODO check how to access a private value
+        pass
+
+    def test_checkformatID(self):
+        '''check id format of storage'''
+        my_model = BaseModel()
+        all_objs = storage.all()
+        for key, value in all_objs.items():
+            self.assertEqual(key.split('.')[0], "BaseModel")
+            id = key.split('.')[1]
+            self.assertEqual(value.id, id)
