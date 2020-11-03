@@ -7,6 +7,7 @@ JSON file to instances
 
 import models
 import json
+from models.user import User
 from datetime import datetime
 
 
@@ -51,6 +52,8 @@ class FileStorage:
                 for key, value in data.items():
                     if key.split('.')[0] == 'BaseModel':
                         new = BaseModel(**value)
+                    elif key.split('.')[0] == 'User':
+                        new = User(**value)
                     self.__objects[key] = new
         except FileNotFoundError:
             pass
