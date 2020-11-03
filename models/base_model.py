@@ -53,18 +53,13 @@ class BaseModel():
         """
         returns a dictionary containing all keys/values of __dict__
         """
-        my_dict = self.__dict__
-        if "created_at" in my_dict:
-            if type(my_dict["created_at"]) is not str:
-                my_dict["created_at"] = datetime.now().strftime(
+        my_dict = {}
+        for key, value in self.__dict__.items():
+            if key in ("created_at", "updated_at"):
+                parsedValue = value.strftime(
                     '%Y-%m-%dT%H:%M:%S.%f')
             else:
-                my_dict["created_at"] = self.created_at
-        if "updated_at" in my_dict:
-            if type(my_dict["updated_at"]) is not str:
-                my_dict["updated_at"] = datetime.now().strftime(
-                    '%Y-%m-%dT%H:%M:%S.%f')
-            else:
-                my_dict["updated_at"] = self.updated_at
+                parsedValue = value
+            my_dict[key] = parsedValue
         my_dict["__class__"] = self.__class__.__name__
         return (my_dict)
