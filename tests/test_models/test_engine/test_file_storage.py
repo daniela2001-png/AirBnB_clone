@@ -52,7 +52,6 @@ class TestFileStorage(TestCase):
         my_model = BaseModel()
         self.assertEqual(type(storage.all()), dict)
 
-
 ##################
 # Unuseless test #
 ##################
