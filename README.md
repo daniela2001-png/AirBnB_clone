@@ -11,47 +11,47 @@
 
 ------------
 
-`
+```
 
-	$ ./console.py
-	(hbnb) help
+$ ./console.py
+(hbnb) help
 
-	Documented commands (type help <topic>):
-	========================================
-	EOF  help  quit
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
 
-	(hbnb) 
-	(hbnb) 
-	(hbnb) quit
-	$`
+(hbnb) 
+(hbnb) 
+(hbnb) quit
+$
+```
 
 ------------
 
 * **non-interactive** mode 😌:  
 
 ------------
-`
+```
+$ echo "help" | ./console.py
+(hbnb)
 
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+$
+$ cat test_help
+help
+$
+$ cat test_help | ./console.py
+(hbnb)
 
-	$ echo "help" | ./console.py
-	(hbnb)
-
-	Documented commands (type help <topic>):
-	========================================
-	EOF  help  quit
-	(hbnb) 
-	$
-	$ cat test_help
-	help
-	$
-	$ cat test_help | ./console.py
-	(hbnb)
-
-	Documented commands (type help <topic>):
-	========================================
-	EOF  help  quit
-	(hbnb) 
-	$`
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+$
+```
 
 
 
