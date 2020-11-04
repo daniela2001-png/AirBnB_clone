@@ -8,6 +8,11 @@ JSON file to instances
 import models
 import json
 from models.user import User
+from models.amenity import Amenity
+from models.city import City
+from models.review import Review
+from models.state import State
+from models.place import Place
 from datetime import datetime
 
 
@@ -54,6 +59,16 @@ class FileStorage:
                         new = BaseModel(**value)
                     elif key.split('.')[0] == 'User':
                         new = User(**value)
+                    elif key.split('.')[0] == "Amenity":
+                        new = Amenity(**value)
+                    elif key.split('.')[0] == "City":
+                        new = City(**value)
+                    elif key.split('.')[0] == "State":
+                        new = State(**value)
+                    elif key.split('.')[0] == "Place":
+                        new = Place(**value)
+                    elif key.split('.')[0] == "Review":
+                        new = Review(**value)
                     self.__objects[key] = new
         except FileNotFoundError:
             pass
