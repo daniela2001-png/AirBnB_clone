@@ -147,7 +147,7 @@ To run the unittests
 
 ------------
 
-## By: <a href="https://github.com/daniela2001-png">Daniela Morales 🙋‍♀️</a>  & <a herf="https://github.com/Athesto">Gustavo Mejía 🙋‍♂️</a>
+## By: <a href="https://github.com/daniela2001-png">Daniela Morales 🙋‍♀️</a>  & <a href="https://github.com/Athesto"> Gustavo Mejía 🙋‍♂️</a>
 
 ------------
 
