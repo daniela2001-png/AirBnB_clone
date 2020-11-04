@@ -4,6 +4,7 @@
 import unittest
 from models.base_model import BaseModel
 from models import storage
+from datetime import datetime
 import os
 
 
@@ -51,6 +52,11 @@ class TestFileStorage(unittest.TestCase):
         '''check public instance types'''
         my_model = BaseModel()
         self.assertEqual(type(storage.all()), dict)
+        self.assertEqual(type(my_model.id), str)
+        self.assertEqual(type(my_model.created_at), datetime)
+        self.assertEqual(type(my_model.to_dict()['created_at']), str)
+        self.assertEqual(type(my_model.updated_at), datetime)
+        self.assertEqual(type(my_model.to_dict()['updated_at']), str)
 
 ##################
 # Unuseless test #
