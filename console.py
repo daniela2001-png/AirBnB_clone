@@ -3,12 +3,13 @@
 """
 is the console to developer
 """
+from models import storage
+import json
+from models.base_model import BaseModel
 from cmd import Cmd
 import sys
 from models.user import User
-from models.base_model import BaseModel
-import json
-from models import storage
+from models.review import Review
 
 
 class HBNBCommand(Cmd):
@@ -17,7 +18,8 @@ class HBNBCommand(Cmd):
         prompt = '(hbnb) '
     else:
         prompt = '(hbnb)' + '\n'
-    clases = ("BaseModel", "User")
+    clases = ("BaseModel", "User", "Amenity",
+              "City", "State", "Place", "Review")
 
     def do_quit(self, input):
         """ Is the function it will exit the program """
