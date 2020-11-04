@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 '''testing file_storage module'''
 
-from unittest import TestCase
+import unittest
 from models.base_model import BaseModel
 from models import storage
 import os
 
 
-class TestFileStorage(TestCase):
+class TestFileStorage(unittest.TestCase):
     '''Class testing File Storage'''
 
     json_file = "file.json"
@@ -64,3 +64,7 @@ class TestFileStorage(TestCase):
             self.assertEqual(key.split('.')[0], "BaseModel")
             id = key.split('.')[1]
             self.assertEqual(value.id, id)
+
+
+if __name__ == "__main__":
+    unittest.main()

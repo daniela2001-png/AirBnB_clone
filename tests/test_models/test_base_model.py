@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''test models'''
-import unittest
 import re
+import unittest
 from models.base_model import BaseModel
 from datetime import datetime
 from time import sleep
@@ -92,3 +92,7 @@ class TestBaseModel(unittest.TestCase):
             if (key not in ('__class__', 'id', 'created_at', 'updated_at')):
                 attributes[key] = value
         self.assertFalse(attributes)
+
+
+if __name__ == "__name__":
+    unittest.main()

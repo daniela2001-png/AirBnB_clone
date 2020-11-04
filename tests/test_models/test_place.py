@@ -1,12 +1,16 @@
 #!/usr/bin/python3
 '''Test Module Place'''
 
-from unittest import TestCase
+import unittest
 
 
-class TestPlace(TestCase):
+class TestPlace(unittest.TestCase):
     '''Test for Place from BaseModel'''
 
     def test_demo(self):
         '''this is a demo'''
         self.assertTrue(True)
+
+
+if __name__ == "__main__":
+    unittest.main()

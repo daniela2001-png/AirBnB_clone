@@ -3,13 +3,13 @@
 
 import os
 import re
+import unittest
 from models import storage
-from unittest import TestCase
 from models.user import User
 from models.base_model import BaseModel
 
 
-class TestUser(TestCase):
+class TestUser(unittest.TestCase):
     '''test class for User class'''
 
     json_file = "file.json"
@@ -36,7 +36,6 @@ class TestUser(TestCase):
         r = re.compile(r"\[User\] \(.*\) \{.*\}")
         self.assertIsNotNone(r.match(my_str))
 
-
 ##################
 # Unusefull Test #
 ##################
@@ -44,3 +43,7 @@ class TestUser(TestCase):
     def test_Subclass(self):
         '''user class inherit from BaseModel'''
         self.assertTrue(issubclass(User, BaseModel))
+
+
+if __name__ == "__main__":
+    unittest.main()
