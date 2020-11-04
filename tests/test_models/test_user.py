@@ -1,16 +1,13 @@
 #!/usr/bin/python3
-
-"""
-class that inherits of BaseModel
-"""
-from models.base_model import BaseModel
+'''test user class'''
 
 
-class User(BaseModel):
-    """
-    here we go :3
-    """
-    email = ""
-    password = ""
-    first_name = ""
-    last_name = ""
+from unittest import TestCase
+
+
+class TestUser(TestCase):
+    '''test class for User class'''
+
+    def test_demo(self):
+        '''test demo'''
+        self.assertTrue(True)
