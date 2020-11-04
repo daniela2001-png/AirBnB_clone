@@ -1,8 +1,7 @@
 # 0x00. AirBnB clone - The console
 
 ------------
-
-[![image](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20201104%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20201104T154544Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=e61f77c0262f5b539ec085adb15dffb215001e13fc173858bb4ed635ca34bb74 "image")](http://https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20201104%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20201104T154544Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=e61f77c0262f5b539ec085adb15dffb215001e13fc173858bb4ed635ca34bb74 "image")
+<a href="https://ibb.co/hfv1q1B"><img src="https://i.ibb.co/tX5PdPq/CLON1.png" alt="CLON1" border="0"></a>
 
 ------------
 
@@ -69,11 +68,11 @@
 
 ------------
 
-	👉	 create
-	👉	 update
-	👉	 show
-	👉	 all
-	👉	 destroy
+	👉 create
+	👉 update
+	👉 show
+	👉 all
+	👉 destroy
 
 ------------
 
