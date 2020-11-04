@@ -18,4 +18,5 @@ def main():
         print("\t{}: ({}) - {}".format(key, type(my_model_json[key]),
                                        my_model_json[key]))
 
+
 main()

@@ -30,7 +30,7 @@ class TestBaseModel(unittest.TestCase):
     def test_created_at_noArgs_format(self):
         '''check format %Y-%M-%DT%H:%M:%S.%MS'''
         datetime_format = re.compile(
-            "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d+$")
+            r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d+$")
         my_model = BaseModel()
         my_created_at = my_model.to_dict()['created_at']
         format_found = datetime_format.match(my_created_at)
@@ -57,7 +57,7 @@ class TestBaseModel(unittest.TestCase):
     def test_updated_at_noArgs_format(self):
         '''check format %Y-%M-%DT%H:%M:%S.%MS'''
         datetime_format = re.compile(
-            "\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d+$")
+            r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d+$")
         my_model = BaseModel()
         my_updated_at = my_model.to_dict()['updated_at']
         format_found = datetime_format.match(my_updated_at)
@@ -79,7 +79,7 @@ class TestBaseModel(unittest.TestCase):
     def test_str(self):
         '''check __str__ method'''
         my_model = BaseModel()
-        r = re.compile("\[BaseModel\] (.*) {.*}")
+        r = re.compile(r"\[BaseModel\] (.*) {.*}")
         my_str = my_model.__str__()
         self.assertIsNotNone(r.match(my_str))
 
