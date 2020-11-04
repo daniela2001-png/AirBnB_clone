@@ -5,11 +5,15 @@ is the console to developer
 """
 from models import storage
 import json
-from models.base_model import BaseModel
 from cmd import Cmd
 import sys
+from models.base_model import BaseModel
+from models.city import City
+from models.amenity import Amenity
 from models.user import User
+from models.state import State
 from models.review import Review
+from models.place import Place
 
 
 class HBNBCommand(Cmd):
@@ -47,6 +51,16 @@ class HBNBCommand(Cmd):
                     new_inst = BaseModel()
                 elif inp == "User":
                     new_inst = User()
+                elif inp == "Amenity":
+                    new_inst = Amenity()
+                elif inp == "Place":
+                    new_inst = Place()
+                elif inp == "City":
+                    new_inst = City()
+                elif inp == "State":
+                    new_inst = State()
+                elif inp == "Review":
+                    new_inst = Review()
                 print(new_inst.id)
             else:
                 print("** class doesn't exist **")
