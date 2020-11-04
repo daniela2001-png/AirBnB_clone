@@ -72,7 +72,8 @@ class FileStorage:
                     self.__objects[key] = new
         except FileNotFoundError:
             pass
-
+    """
     def clear(self):
         '''Clear objectes, this was used for tests'''
         self.__objects = {}
+    """
