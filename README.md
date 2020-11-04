@@ -12,7 +12,6 @@
 ------------
 
 ```
-
 $ ./console.py
 (hbnb) help
 
