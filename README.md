@@ -83,47 +83,47 @@ And also the next part to this great scheme is use the miniframework of Python c
 ------------
 
 * **State**: 🌆
-	Public class attributes:
-	**name:** will be the name of teh state to
+	* Public class attributes:
+   		* **name:** will be the name of teh state to
 
 ------------
 
 * **City**: 🏙
-	Public class attributes:
-	**state_id**: string - empty string: it will be the State.id
-	**name**: string - empty string
+      * Public class attributes:
+		* **state_id**: string - empty string: it will be the State.id
+		* **name**: string - empty string
 
 ------------
 
 * **Amenity** : ⭐️
-	Public class attributes:
-	**name**: string - empty string
+	* Public class attributes:
+		* **name**: string - empty string
 
 ------------
 
 
 * **Place:** 🌎
-	Public class attributes:
-	**city_id:** string - empty string: it will be the City.id
-	**user_id:** string - empty string: it will be the User.id
-	**name:** string - empty string
-	**description:** string - empty string
-	**number_rooms:** integer - 0
-	**number_bathrooms:** integer - 0
-	**max_guest:** integer - 0
-	**price_by_night:** integer - 0
-	**latitude**: float - 0.0
-	**longitude**: float - 0.0
-	**amenity_ids**: list of string - empty list: it will be the list of Amenity.id later
+	* Public class attributes:
+		* **city_id:** string - empty string: it will be the City.id
+		* **user_id:** string - empty string: it will be the User.id
+		* **name:** string - empty string
+		* **description:** string - empty string
+		* **number_rooms:** integer - 0
+		* **number_bathrooms:** integer - 0
+		* **max_guest:** integer - 0
+		* **price_by_night:** integer - 0
+		* **latitude**: float - 0.0
+		* **longitude**: float - 0.0
+		* **amenity_ids**: list of string - empty list: it will be the list of Amenity.id later
 
 ------------
 
 
 * **Review:** ✅
-	Public class attributes:
-	**place_id:** string - empty string: it will be the Place.id
-	**user_id:** string - empty string: it will be the User.id
-	**text:** string - empty string
+	* Public class attributes:
+		* **place_id:** string - empty string: it will be the Place.id
+		* **user_id:** string - empty string: it will be the User.id
+		* **text:** string - empty string
 
 
 ------------
