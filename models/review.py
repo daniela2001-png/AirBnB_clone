@@ -2,6 +2,7 @@
 
 """
 class that inherits of basemodel
+so far idk what do this
 """
 
 from models.base_model import BaseModel
