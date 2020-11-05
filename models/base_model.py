@@ -2,6 +2,7 @@
 
 """
 class BaseModel that defines all common attributes/methods for other classes
+this class will be the father class
 """
 
 import uuid
