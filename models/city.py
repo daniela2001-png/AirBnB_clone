@@ -11,6 +11,7 @@ class City(BaseModel):
     """
     Public class attributes
     name
+    state_id
     """
     name = ""
     state_id = ""
