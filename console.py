@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 """
-is the console to developer
+is the console that will be manage
+by developer
 """
 from models import storage
 import json
