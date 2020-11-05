@@ -10,8 +10,8 @@ from models.base_model import BaseModel
 class City(BaseModel):
     """
     Public class attributes
-    name
-    state_id
+    name = str
+    state_id = str
     """
     name = ""
     state_id = ""
