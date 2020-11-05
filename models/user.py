@@ -8,7 +8,7 @@ from models.base_model import BaseModel
 
 class User(BaseModel):
     """
-    here we go :3
+    define atributtes for this class
     """
     email = ""
     password = ""
