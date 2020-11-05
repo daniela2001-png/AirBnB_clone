@@ -2,7 +2,7 @@
 
 """
 a class FileStorage that serializes instances to a JSON file and deserializes
-JSON file to instances
+JSON file to instances of each class that we have
 """
 
 import models
