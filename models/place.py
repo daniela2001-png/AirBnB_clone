@@ -2,6 +2,8 @@
 
 """
 class that inherits of basemodel :3
+this class will save the atributtes
+for a client
 """
 
 from models.base_model import BaseModel
