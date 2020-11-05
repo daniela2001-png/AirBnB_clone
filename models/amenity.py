@@ -9,6 +9,6 @@ from models.base_model import BaseModel
 class Amenity(BaseModel):
     """
     Public class attribute
-    name = ""
+    name = string
     """
     name = ""
