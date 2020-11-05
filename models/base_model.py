@@ -12,7 +12,7 @@ import models
 
 class BaseModel():
     """
-    the class BaseModel!
+    the class BaseModel
     """
     date = '%Y-%m-%dT%H:%M:%S.%f'
 
