@@ -52,9 +52,21 @@ class TestFileStorage(unittest.TestCase):
         '''check public instance types'''
         my_model = BaseModel()
         self.assertEqual(type(storage.all()), dict)
+
+    def test_type_id(self):
+        '''check public instance types'''
+        my_model = BaseModel()
         self.assertEqual(type(my_model.id), str)
+
+    def test_type_created_at(self):
+        '''check public instance types'''
+        my_model = BaseModel()
         self.assertEqual(type(my_model.created_at), datetime)
         self.assertEqual(type(my_model.to_dict()['created_at']), str)
+
+    def test_type_updated_at(self):
+        '''check public instance types'''
+        my_model = BaseModel()
         self.assertEqual(type(my_model.updated_at), datetime)
         self.assertEqual(type(my_model.to_dict()['updated_at']), str)
 
