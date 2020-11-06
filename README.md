@@ -62,7 +62,7 @@ $
 
 ------------
 
-* **Explanation**:  In the previous image we can see the struct of all our project with **Airbnb**, we done the first part of this that is the console, this console is made for the developer, here we can manage the **commands **:
+* **Explanation**:  In the previous image we can see the struct of all our project with **Airbnb**, we done the first part of this that is the console, this console is made for the developer, here we can manage the **commands**:
 
 ------------
 
